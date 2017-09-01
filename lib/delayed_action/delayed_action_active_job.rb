@@ -21,7 +21,7 @@ class DelayedActionActiveJob < ActiveJob::Base
     end
     puts path
     session.get path, nil, env
-    result.update(result: session.response.body, content_type: session.response.content_type)
+    result.update(result: session.response.body, content_type: session.response.content_type.to_s)
 
   end
 
